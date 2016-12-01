@@ -1,0 +1,229 @@
+Mystery Machine
+1: q1,a|qa,#,R
+2: q1,b|qb,#,R
+3: q1,c|qc,#,R
+4: q1,x|q1,#,R
+5: q1,_|qaccept,#,L
+6: qa,x|qa,x,R
+7: qa,a|qa,a,R
+8: qa,b|qab,x,R
+9: qa,c|qac,x,R
+10: qa,_|qreject,#,L
+11: qb,x|qb,x,R
+12: qb,b|qb,b,R
+13: qb,a|qba,x,R
+14: qb,c|qbc,x,R
+15: qb,_|qreject,#,L
+16: qc,x|qc,x,R
+17: qc,c|qc,c,R
+18: qc,a|qca,x,R
+19: qc,b|qcb,x,R
+20: qc,_|qreject,#,L
+21: qab,x|qab,x,R
+22: qab,a|qab,a,R
+23: qab,b|qab,b,R
+24: qab,c|qabc,x,L
+25: qab,_|qreject,#,L
+26: qac,x|qac,x,R
+27: qac,a|qac,a,R
+28: qac,c|qac,c,R
+29: qac,b|qabc,x,L
+30: qac,_|qreject,b,L
+31: qba,x|qba,x,R
+32: qba,a|qba,a,R
+33: qba,b|qba,b,R
+34: qba,c|qabc,x,L
+35: qba,_|qreject,#,L
+36: qbc,x|qbc,x,R
+37: qbc,b|qbc,b,R
+38: qbc,c|qbc,c,R
+39: qbc,a|qabc,x,L
+40: qbc,_|qreject,#,L
+41: qca,x|qca,x,R
+42: qca,a|qca,a,R
+43: qca,c|qca,c,R
+44: qca,b|qabc,x,L
+45: qca,_|qreject,#,L
+46: qcb,x|qcb,x,R
+47: qcb,c|qcb,c,R
+48: qcb,b|qcb,b,R
+49: qcb,a|qabc,x,L
+50: qcb,_|qreject,#,L
+51: qabc,a|qabc,a,L
+52: qabc,b|qabc,b,L
+53: qabc,c|qabc,c,L
+54: qabc,x|qabc,x,L
+55: qabc,#|q1,#,R
+
+Test File: Mystery/MysteryTest.txt
+Tape: abc
+1@0#|q1|abc
+2@1##|qa|bc
+3@2##x|qab|c
+4@1##|qabc|xx
+5@0#|qabc|#xx
+6@1##|q1|xx
+7@2###|q1|x
+8@3####|q1|
+9@2###|qaccept|##
+Accepted: ####
+Tape: cba
+1@0#|q1|cba
+2@1##|qc|ba
+3@2##x|qcb|a
+4@1##|qabc|xx
+5@0#|qabc|#xx
+6@1##|q1|xx
+7@2###|q1|x
+8@3####|q1|
+9@2###|qaccept|##
+Accepted: ####
+Tape: cbb
+1@0#|q1|cbb
+2@1##|qc|bb
+3@2##x|qcb|b
+4@3##xb|qcb|
+5@2##x|qreject|b#
+Rejected: #xb#
+Tape: abca
+1@0#|q1|abca
+2@1##|qa|bca
+3@2##x|qab|ca
+4@1##|qabc|xxa
+5@0#|qabc|#xxa
+6@1##|q1|xxa
+7@2###|q1|xa
+8@3####|q1|a
+9@4#####|qa|
+10@3####|qreject|##
+Rejected: #####
+Tape: bbaacc
+1@0#|q1|bbaacc
+2@1##|qb|baacc
+3@2##b|qb|aacc
+4@3##bx|qba|acc
+5@4##bxa|qba|cc
+6@3##bx|qabc|axc
+7@2##b|qabc|xaxc
+8@1##|qabc|bxaxc
+9@0#|qabc|#bxaxc
+10@1##|q1|bxaxc
+11@2###|qb|xaxc
+12@3###x|qb|axc
+13@4###xx|qba|xc
+14@5###xxx|qba|c
+15@4###xx|qabc|xx
+16@3###x|qabc|xxx
+17@2###|qabc|xxxx
+18@1##|qabc|#xxxx
+19@2###|q1|xxxx
+20@3####|q1|xxx
+21@4#####|q1|xx
+22@5######|q1|x
+23@6#######|q1|
+24@5######|qaccept|##
+Accepted: #######
+Tape: bacb
+1@0#|q1|bacb
+2@1##|qb|acb
+3@2##x|qba|cb
+4@1##|qabc|xxb
+5@0#|qabc|#xxb
+6@1##|q1|xxb
+7@2###|q1|xb
+8@3####|q1|b
+9@4#####|qb|
+10@3####|qreject|##
+Rejected: #####
+Tape: aaacbba
+1@0#|q1|aaacbba
+2@1##|qa|aacbba
+3@2##a|qa|acbba
+4@3##aa|qa|cbba
+5@4##aax|qac|bba
+6@3##aa|qabc|xxba
+7@2##a|qabc|axxba
+8@1##|qabc|aaxxba
+9@0#|qabc|#aaxxba
+10@1##|q1|aaxxba
+11@2###|qa|axxba
+12@3###a|qa|xxba
+13@4###ax|qa|xba
+14@5###axx|qa|ba
+15@6###axxx|qab|a
+16@7###axxxa|qab|
+17@6###axxx|qreject|a#
+Rejected: ##axxxa#
+Tape: cbbbaccaa
+1@0#|q1|cbbbaccaa
+2@1##|qc|bbbaccaa
+3@2##x|qcb|bbaccaa
+4@3##xb|qcb|baccaa
+5@4##xbb|qcb|accaa
+6@3##xb|qabc|bxccaa
+7@2##x|qabc|bbxccaa
+8@1##|qabc|xbbxccaa
+9@0#|qabc|#xbbxccaa
+10@1##|q1|xbbxccaa
+11@2###|q1|bbxccaa
+12@3####|qb|bxccaa
+13@4####b|qb|xccaa
+14@5####bx|qb|ccaa
+15@6####bxx|qbc|caa
+16@7####bxxc|qbc|aa
+17@6####bxx|qabc|cxa
+18@5####bx|qabc|xcxa
+19@4####b|qabc|xxcxa
+20@3####|qabc|bxxcxa
+21@2###|qabc|#bxxcxa
+22@3####|q1|bxxcxa
+23@4#####|qb|xxcxa
+24@5#####x|qb|xcxa
+25@6#####xx|qb|cxa
+26@7#####xxx|qbc|xa
+27@8#####xxxx|qbc|a
+28@7#####xxx|qabc|xx
+29@6#####xx|qabc|xxx
+30@5#####x|qabc|xxxx
+31@4#####|qabc|xxxxx
+32@3####|qabc|#xxxxx
+33@4#####|q1|xxxxx
+34@5######|q1|xxxx
+35@6#######|q1|xxx
+36@7########|q1|xx
+37@8#########|q1|x
+38@9##########|q1|
+39@8#########|qaccept|##
+Accepted: ##########
+Tape: cbabcacababc
+1@0#|q1|cbabcacababc
+2@1##|qc|babcacababc
+3@2##x|qcb|abcacababc
+4@1##|qabc|xxbcacababc
+5@0#|qabc|#xxbcacababc
+6@1##|q1|xxbcacababc
+7@2###|q1|xbcacababc
+8@3####|q1|bcacababc
+9@4#####|qb|cacababc
+10@5#####x|qbc|acababc
+11@4#####|qabc|xxcababc
+12@3####|qabc|#xxcababc
+13@4#####|q1|xxcababc
+14@5######|q1|xcababc
+15@6#######|q1|cababc
+16@7########|qc|ababc
+17@8########x|qca|babc
+18@7########|qabc|xxabc
+19@6#######|qabc|#xxabc
+20@7########|q1|xxabc
+21@8#########|q1|xabc
+22@9##########|q1|abc
+23@10###########|qa|bc
+24@11###########x|qab|c
+25@10###########|qabc|xx
+26@9##########|qabc|#xx
+27@10###########|q1|xx
+28@11############|q1|x
+29@12#############|q1|
+30@11############|qaccept|##
+Accepted: #############

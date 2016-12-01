@@ -1,0 +1,263 @@
+M1: TM from Example 3.9
+1: q1,0|q2,x,R
+2: q1,#|q8,#,R
+3: q1,1|q3,x,R
+4: q2,0|q2,0,R
+5: q2,1|q2,1,R
+6: q2,#|q4,#,R
+7: q3,0|q3,0,R
+8: q3,1|q3,1,R
+9: q3,#|q5,#,R
+10: q4,x|q4,x,R
+11: q4,0|q6,x,L
+12: q5,x|q5,x,R
+13: q5,1|q6,x,L
+14: q6,0|q6,0,L
+15: q6,1|q6,1,L
+16: q6,x|q6,x,L
+17: q6,#|q7,#,L
+18: q7,0|q7,0,L
+19: q7,1|q7,1,L
+20: q7,x|q1,x,R
+21: q8,x|q8,x,R
+22: q8,_|qaccept,x,R
+
+Test File: M1/M1-Accept.txt
+Tape: 0#0
+1@0#|q1|0#0
+2@1#x|q2|#0
+3@2#x#|q4|0
+4@1#x|q6|#x
+5@0#|q7|x#x
+6@1#x|q1|#x
+7@2#x#|q8|x
+8@3#x#x|q8|
+9@4#x#xx|qaccept|
+Accepted: x#xx
+Tape: 1#1
+1@0#|q1|1#1
+2@1#x|q3|#1
+3@2#x#|q5|1
+4@1#x|q6|#x
+5@0#|q7|x#x
+6@1#x|q1|#x
+7@2#x#|q8|x
+8@3#x#x|q8|
+9@4#x#xx|qaccept|
+Accepted: x#xx
+Tape: #
+1@0#|q1|#
+2@1##|q8|
+3@2##x|qaccept|
+Accepted: #x
+Tape: 010#010
+1@0#|q1|010#010
+2@1#x|q2|10#010
+3@2#x1|q2|0#010
+4@3#x10|q2|#010
+5@4#x10#|q4|010
+6@3#x10|q6|#x10
+7@2#x1|q7|0#x10
+8@1#x|q7|10#x10
+9@0#|q7|x10#x10
+10@1#x|q1|10#x10
+11@2#xx|q3|0#x10
+12@3#xx0|q3|#x10
+13@4#xx0#|q5|x10
+14@5#xx0#x|q5|10
+15@4#xx0#|q6|xx0
+16@3#xx0|q6|#xx0
+17@2#xx|q7|0#xx0
+18@1#x|q7|x0#xx0
+19@2#xx|q1|0#xx0
+20@3#xxx|q2|#xx0
+21@4#xxx#|q4|xx0
+22@5#xxx#x|q4|x0
+23@6#xxx#xx|q4|0
+24@5#xxx#x|q6|xx
+25@4#xxx#|q6|xxx
+26@3#xxx|q6|#xxx
+27@2#xx|q7|x#xxx
+28@3#xxx|q1|#xxx
+29@4#xxx#|q8|xxx
+30@5#xxx#x|q8|xx
+31@6#xxx#xx|q8|x
+32@7#xxx#xxx|q8|
+33@8#xxx#xxxx|qaccept|
+Accepted: xxx#xxxx
+Tape: 100110#100110
+1@0#|q1|100110#100110
+2@1#x|q3|00110#100110
+3@2#x0|q3|0110#100110
+4@3#x00|q3|110#100110
+5@4#x001|q3|10#100110
+6@5#x0011|q3|0#100110
+7@6#x00110|q3|#100110
+8@7#x00110#|q5|100110
+9@6#x00110|q6|#x00110
+10@5#x0011|q7|0#x00110
+11@4#x001|q7|10#x00110
+12@3#x00|q7|110#x00110
+13@2#x0|q7|0110#x00110
+14@1#x|q7|00110#x00110
+15@0#|q7|x00110#x00110
+16@1#x|q1|00110#x00110
+17@2#xx|q2|0110#x00110
+18@3#xx0|q2|110#x00110
+19@4#xx01|q2|10#x00110
+20@5#xx011|q2|0#x00110
+21@6#xx0110|q2|#x00110
+22@7#xx0110#|q4|x00110
+23@8#xx0110#x|q4|00110
+24@7#xx0110#|q6|xx0110
+25@6#xx0110|q6|#xx0110
+26@5#xx011|q7|0#xx0110
+27@4#xx01|q7|10#xx0110
+28@3#xx0|q7|110#xx0110
+29@2#xx|q7|0110#xx0110
+30@1#x|q7|x0110#xx0110
+31@2#xx|q1|0110#xx0110
+32@3#xxx|q2|110#xx0110
+33@4#xxx1|q2|10#xx0110
+34@5#xxx11|q2|0#xx0110
+35@6#xxx110|q2|#xx0110
+36@7#xxx110#|q4|xx0110
+37@8#xxx110#x|q4|x0110
+38@9#xxx110#xx|q4|0110
+39@8#xxx110#x|q6|xx110
+40@7#xxx110#|q6|xxx110
+41@6#xxx110|q6|#xxx110
+42@5#xxx11|q7|0#xxx110
+43@4#xxx1|q7|10#xxx110
+44@3#xxx|q7|110#xxx110
+45@2#xx|q7|x110#xxx110
+46@3#xxx|q1|110#xxx110
+47@4#xxxx|q3|10#xxx110
+48@5#xxxx1|q3|0#xxx110
+49@6#xxxx10|q3|#xxx110
+50@7#xxxx10#|q5|xxx110
+51@8#xxxx10#x|q5|xx110
+52@9#xxxx10#xx|q5|x110
+53@10#xxxx10#xxx|q5|110
+54@9#xxxx10#xx|q6|xx10
+55@8#xxxx10#x|q6|xxx10
+56@7#xxxx10#|q6|xxxx10
+57@6#xxxx10|q6|#xxxx10
+58@5#xxxx1|q7|0#xxxx10
+59@4#xxxx|q7|10#xxxx10
+60@3#xxx|q7|x10#xxxx10
+61@4#xxxx|q1|10#xxxx10
+62@5#xxxxx|q3|0#xxxx10
+63@6#xxxxx0|q3|#xxxx10
+64@7#xxxxx0#|q5|xxxx10
+65@8#xxxxx0#x|q5|xxx10
+66@9#xxxxx0#xx|q5|xx10
+67@10#xxxxx0#xxx|q5|x10
+68@11#xxxxx0#xxxx|q5|10
+69@10#xxxxx0#xxx|q6|xx0
+70@9#xxxxx0#xx|q6|xxx0
+71@8#xxxxx0#x|q6|xxxx0
+72@7#xxxxx0#|q6|xxxxx0
+73@6#xxxxx0|q6|#xxxxx0
+74@5#xxxxx|q7|0#xxxxx0
+75@4#xxxx|q7|x0#xxxxx0
+76@5#xxxxx|q1|0#xxxxx0
+77@6#xxxxxx|q2|#xxxxx0
+78@7#xxxxxx#|q4|xxxxx0
+79@8#xxxxxx#x|q4|xxxx0
+80@9#xxxxxx#xx|q4|xxx0
+81@10#xxxxxx#xxx|q4|xx0
+82@11#xxxxxx#xxxx|q4|x0
+83@12#xxxxxx#xxxxx|q4|0
+84@11#xxxxxx#xxxx|q6|xx
+85@10#xxxxxx#xxx|q6|xxx
+86@9#xxxxxx#xx|q6|xxxx
+87@8#xxxxxx#x|q6|xxxxx
+88@7#xxxxxx#|q6|xxxxxx
+89@6#xxxxxx|q6|#xxxxxx
+90@5#xxxxx|q7|x#xxxxxx
+91@6#xxxxxx|q1|#xxxxxx
+92@7#xxxxxx#|q8|xxxxxx
+93@8#xxxxxx#x|q8|xxxxx
+94@9#xxxxxx#xx|q8|xxxx
+95@10#xxxxxx#xxx|q8|xxx
+96@11#xxxxxx#xxxx|q8|xx
+97@12#xxxxxx#xxxxx|q8|x
+98@13#xxxxxx#xxxxxx|q8|
+99@14#xxxxxx#xxxxxxx|qaccept|
+Accepted: xxxxxx#xxxxxxx
+Tape: 10101#10101
+1@0#|q1|10101#10101
+2@1#x|q3|0101#10101
+3@2#x0|q3|101#10101
+4@3#x01|q3|01#10101
+5@4#x010|q3|1#10101
+6@5#x0101|q3|#10101
+7@6#x0101#|q5|10101
+8@5#x0101|q6|#x0101
+9@4#x010|q7|1#x0101
+10@3#x01|q7|01#x0101
+11@2#x0|q7|101#x0101
+12@1#x|q7|0101#x0101
+13@0#|q7|x0101#x0101
+14@1#x|q1|0101#x0101
+15@2#xx|q2|101#x0101
+16@3#xx1|q2|01#x0101
+17@4#xx10|q2|1#x0101
+18@5#xx101|q2|#x0101
+19@6#xx101#|q4|x0101
+20@7#xx101#x|q4|0101
+21@6#xx101#|q6|xx101
+22@5#xx101|q6|#xx101
+23@4#xx10|q7|1#xx101
+24@3#xx1|q7|01#xx101
+25@2#xx|q7|101#xx101
+26@1#x|q7|x101#xx101
+27@2#xx|q1|101#xx101
+28@3#xxx|q3|01#xx101
+29@4#xxx0|q3|1#xx101
+30@5#xxx01|q3|#xx101
+31@6#xxx01#|q5|xx101
+32@7#xxx01#x|q5|x101
+33@8#xxx01#xx|q5|101
+34@7#xxx01#x|q6|xx01
+35@6#xxx01#|q6|xxx01
+36@5#xxx01|q6|#xxx01
+37@4#xxx0|q7|1#xxx01
+38@3#xxx|q7|01#xxx01
+39@2#xx|q7|x01#xxx01
+40@3#xxx|q1|01#xxx01
+41@4#xxxx|q2|1#xxx01
+42@5#xxxx1|q2|#xxx01
+43@6#xxxx1#|q4|xxx01
+44@7#xxxx1#x|q4|xx01
+45@8#xxxx1#xx|q4|x01
+46@9#xxxx1#xxx|q4|01
+47@8#xxxx1#xx|q6|xx1
+48@7#xxxx1#x|q6|xxx1
+49@6#xxxx1#|q6|xxxx1
+50@5#xxxx1|q6|#xxxx1
+51@4#xxxx|q7|1#xxxx1
+52@3#xxx|q7|x1#xxxx1
+53@4#xxxx|q1|1#xxxx1
+54@5#xxxxx|q3|#xxxx1
+55@6#xxxxx#|q5|xxxx1
+56@7#xxxxx#x|q5|xxx1
+57@8#xxxxx#xx|q5|xx1
+58@9#xxxxx#xxx|q5|x1
+59@10#xxxxx#xxxx|q5|1
+60@9#xxxxx#xxx|q6|xx
+61@8#xxxxx#xx|q6|xxx
+62@7#xxxxx#x|q6|xxxx
+63@6#xxxxx#|q6|xxxxx
+64@5#xxxxx|q6|#xxxxx
+65@4#xxxx|q7|x#xxxxx
+66@5#xxxxx|q1|#xxxxx
+67@6#xxxxx#|q8|xxxxx
+68@7#xxxxx#x|q8|xxxx
+69@8#xxxxx#xx|q8|xxx
+70@9#xxxxx#xxx|q8|xx
+71@10#xxxxx#xxxx|q8|x
+72@11#xxxxx#xxxxx|q8|
+73@12#xxxxx#xxxxxx|qaccept|
+Accepted: xxxxx#xxxxxx
